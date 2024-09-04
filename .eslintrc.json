@@ -1,3 +1,38 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    // 1. Tek tırnak kullanımı
+    "quotes": ["error", "single"],
+
+    // 2. Satır sonunda noktalı virgül kullanılmaması
+    "semi": ["error", "never"],
+
+    // 3. Console.log kullanımını yasaklama (productionda hata)
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+
+    // 4. Sürekli olarak arrow fonksiyon kullanımı
+    "prefer-arrow-callback": "error",
+
+    // 5. Gereksiz parantezlerin kaldırılması
+    "no-extra-parens": ["error", "all"],
+
+    // 6. Props"un alfabetik sırayla dizilmesi
+    "react/jsx-sort-props": ["error", {
+      "callbacksLast": true,
+      "shorthandFirst": true,
+      "ignoreCase": true,
+      "noSortAlphabetically": false,
+     "reservedFirst": true
+    }],
+
+    // 7. Import"ların alfabetik sıraya göre dizilmesi
+    "sort-imports": ["error", {
+      "ignoreDeclarationSort": true,
+      "ignoreCase": true
+    }]
+  }
 }
