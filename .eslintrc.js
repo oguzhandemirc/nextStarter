@@ -1,6 +1,12 @@
 module.exports = {
   extends: ['next', 'next/core-web-vitals', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      presets: [require.resolve('next/babel')],
+    },
+  },
   rules: {
     'prettier/prettier': [
       'error',
